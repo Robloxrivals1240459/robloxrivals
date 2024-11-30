@@ -1,0 +1,8 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+while wait(5) do -- Heals every 5 seconds
+    if character and character:FindFirstChild("Humanoid") then
+        character.Humanoid.Health = math.min(character.Humanoid.MaxHealth, character.Humanoid.Health + 10)
+    end
+end
